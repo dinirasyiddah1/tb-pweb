@@ -24,6 +24,7 @@
                             <th class="text-center">Nama Penduduk</th>
                             <th class="text-center">Jenjang Pendidikan</th>
                             <th class="text-center">Nama Institusi</th>
+                            <th class="text-center">Instansi Pendidikan</th>
                             <th class="text-center">Tanggal Masuk</th>
                             <th class="text-center">Aksi</th>
                         </tr>
@@ -34,6 +35,7 @@
                             <td>{{ $p->penduduk->nama }}</td>
                             <td>{{ $p->jenjang_pendidikan->nama }}</td>
                             <td>{{ $p->nama_institusi }}</td>
+                            <td>{{ $p->instansi_pendidikan}}</td>
                             <td>{{ $p->tahun_mulai }}</td>
                             
                             

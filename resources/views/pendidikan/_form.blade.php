@@ -14,6 +14,11 @@
 </div>
 
 <div class="form-group">
+    <label for="email">Instansi Pendidikan</label>
+    {{ Form::text('instansi_pendidikan', null, ['class' => 'form-control'])}}
+</div>
+
+<div class="form-group">
     <label for="username">Tahun Mulai</label>
     {{ Form::text('tahun_mulai', null, ['class' => 'form-control'])}}
 </div>

@@ -29,6 +29,7 @@ class pendidikanController extends Controller
             'jenjang_id' => 'required',
             'penduduk_id' => 'required',
             'nama_institusi' => 'required',
+            'instansi_pendidikan' => 'required',
             'tahun_mulai' => 'required',
             'tahun_selesai' => 'required'
         ]);
@@ -37,6 +38,7 @@ class pendidikanController extends Controller
         $pendidikan->jenjang_id = $request->input('jenjang_id');
         $pendidikan->penduduk_id = $request->input('penduduk_id');
         $pendidikan->nama_institusi = $request->input('nama_institusi');
+        $pendidikan->instansi_pendidikan = $request->input('instansi_pendidikan');
         $pendidikan->tahun_mulai = $request->input('tahun_mulai');
         $pendidikan->tahun_selesai = $request->input('tahun_selesai');
        

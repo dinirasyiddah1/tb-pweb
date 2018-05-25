@@ -2,7 +2,7 @@
 
 {{-- Menu Breadcrumb --}}
 @section('breadcrumb')
-    <a class="btn" href="{{ route('pendidikan.destroy', [ $pendidikan->id]) }}" onclick="event.preventDefault();confirmDeletion();"><i class="icon-trash"></i> Hapus</a>
+    <a class="btn" href="{{ route('pendidikan.destroy', [ $pendidikan->id]) }}" onclick="event.preventDefault();confirmDeletion('{{ route('pendidikan.destroy', [$pendidikan->id]) }}');"><i class="icon-trash"></i> Hapus</a>
     <a class="btn" href="{{ route('pendidikan.edit', [ $pendidikan->id]) }}"><i class="icon-pencil"></i> Edit</a>
     <a class="btn" href="{{ route('pendidikan.index') }}"><i class="icon-list"></i> List</a>
 
@@ -42,6 +42,12 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                        <label class="col-md-3 col-form-label">Instansi Pendidikan</label>
+                        <div class="col-md-9">
+                            <p class="col-form-label">{{ $pendidikan->instansi_pendidikan }}</p>
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <label class="col-md-3 col-form-label">Tahun Mulai</label>
                         <div class="col-md-9">
                             <p class="col-form-label">{{ $pendidikan->tahun_mulai }}</p>
@@ -64,9 +70,10 @@
 
 @push('javascript')
 <script>
-    function confirmDeletion(){
-        if(confirm('Anda yakin akan menghapus riwayat pendidikan ini?')){
-            form = document.querySelector('form-delete');
+    function confirmDeletion(url){
+        if(confirm('Anda yakin akan menghapus riwayat pendidikan ini? ')){
+            form = document.querySelector('#form-delete');
+            form.action = url;
             form.submit();
         }
     }
